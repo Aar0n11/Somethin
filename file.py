@@ -19,8 +19,14 @@ try:
         if "Interface" in netSplit[i]:
             netIndicies.append(i)
 
-    for u in range(len(netIndicies)):
-        
+    for u in range(netIndicies[1], netIndicies[2]-1):
+        if "192" in netSplit[u]:
+            netIps.append('%.9s' % netSplit[u].split(1).strip())
+
+    for y in range(len(netIps)):
+        for x in range(len(ips)):
+            if ips in netIps[y]:
+                netIps.pop[y]
 
 except subprocess.CalledProcessError as e: 
     print(f"Command failed with return code {e.returncode}")
