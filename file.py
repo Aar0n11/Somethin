@@ -23,10 +23,8 @@ try:
         if "192" in netSplit[u]:
             netIps.append('%.9s' % netSplit[u].split(1).strip())
 
-    for y in range(len(netIps)):
-        for x in range(len(ips)):
-            if ips in netIps[y]:
-                netIps.pop[y]
+    for x in range(len(ips)):
+        netIps.remove(ips[x])
 
 except subprocess.CalledProcessError as e: 
     print(f"Command failed with return code {e.returncode}")
